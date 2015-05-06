@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>RoundKeeper by hb</title>
+</head>
+<body>
+	<div ng-show="!initialized">
+		<div>Loading member data...</div>
+	</div>
+	<div ng-show="initialized">
+		<div ng-show="error">{{errorMessage}}</div>
+		<div>
+			<table class="hb roundkeeper scoring">
+				<tr>
+					<th>Club:</th>
+					<td>{{member.club.name}}</td>
+				</tr>
+				<tr>
+					<th>Member:</th>
+					<td>{{member.name}}</td>
+				</tr>
+				<tr>
+					<th>Member Since:</th>
+					<td>{{member.joined}}</td>
+				</tr>
+				<tr>
+					<th>Member Status:</th>
+					<td>{{member.status}}</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right"><a href="#/users/user/{{member.id}}">Full User Profile</a></td>				
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>RoundKeeper by hb</title>
+</head>
+<body>
+	<table class="hb roundkeeper scoring">
+		<thead>
+			<tr>
+				<th rowspan="2">#</th>
+				<th colspan="3">Golfer</th>
+				<th colspan="3">Handicap</th>
+				<th colspan="10">Front</th>
+				<th colspan="10">Back</th>
+				<th colspan="3">Total</th>
+			</tr>
+			<tr>
+				<th>Name</th>
+				<th>Tee</th>
+				<th>Pts</th>
+				<th>Index</th>
+				<th>Course</th>
+				<th>3/5 Adj</th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+				<th>7</th>
+				<th>8</th>
+				<th>9</th>
+				<th>OUT</th>
+				<th>10</th>
+				<th>11</th>
+				<th>12</th>
+				<th>13</th>
+				<th>14</th>
+				<th>15</th>
+				<th>16</th>
+				<th>17</th>
+				<th>18</th>
+				<th>IN</th>
+				<th>Total</th>
+				<th>Pts Made</th>
+				<th>+/-</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="g in event.players | orderBy : 'name'"> 
+				<td>{{$index + 1}}</td>					
+				<td>{{g.name}}</td>			
+				<td>{{g.teebox.name}}</td>			
+				<td class="pts">{{g.requiredPts}}</td>
+				<td class="hcp">{{hcpFormat(g.hcpIndex)}}</td>			
+				<td class="hcp">{{hcpFormat(calculateCourseHcp(g))}}</td>			
+				<td class="hcp">{{hcpFormat(calculate35Hcp(g))}}</td>							
+				<td class="hole">{{g.round[0]}}</td>
+				<td class="hole">{{g.round[1]}}</td>
+				<td class="hole">{{g.round[2]}}</td>
+				<td class="hole">{{g.round[3]}}</td>
+				<td class="hole">{{g.round[4]}}</td>
+				<td class="hole">{{g.round[5]}}</td>
+				<td class="hole">{{g.round[6]}}</td>
+				<td class="hole">{{g.round[7]}}</td>
+				<td class="hole">{{g.round[8]}}</td>
+				<td class="score">{{calculateScore(OUT, g.round)}}</td>
+				<td class="hole">{{g.round[9]}}</td>
+				<td class="hole">{{g.round[10]}}</td>
+				<td class="hole">{{g.round[11]}}</td>
+				<td class="hole">{{g.round[12]}}</td>
+				<td class="hole">{{g.round[13]}}</td>
+				<td class="hole">{{g.round[14]}}</td>
+				<td class="hole">{{g.round[15]}}</td>
+				<td class="hole">{{g.round[16]}}</td>
+				<td class="hole">{{g.round[17]}}</td>
+				<td class="score">{{calculateScore(IN, g.round)}}</td>
+				<td class="score">{{calculateScore(TOTAL, g.round)}}</td>
+				<td class="pts">{{calculatePtsMade(g.round, event.course.scorecard)}}</td>
+				<td class="pts">{{calculatePlusMinusPoints(g.round, event.course.scorecard)}}</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

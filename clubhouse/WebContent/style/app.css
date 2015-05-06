@@ -1,0 +1,23 @@
+.hb.roundkeeper.scoring {
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+.hb.roundkeeper.scoring TH,.hb.roundkeeper.scoring TD {
+	border: 1px solid #c0c0c0;
+	padding-left:2px;
+}
+
+.hb.roundkeeper.scoring TH {
+	text-align: right;
+	padding-right:2px;
+}
+
+.hb.roundkeeper.scoring TD.hole,.hb.roundkeeper.scoring TD.score {
+	width: 35px;
+	text-align: center;
+}
+
+.hb.roundkeeper.scoring TD.pts,.hb.roundkeeper.scoring TD.hcp {
+	text-align: right;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>RoundKeeper by hb</title>
+</head>
+<body>
+	<div ng-show="!initialized">
+		<div>Loading course data...</div>
+	</div>
+	<div ng-show="initialized">
+		<div ng-show="error">{{errorMessage}}</div>
+		<div>
+			<table class="hb roundkeeper scoring">
+				<tr>
+					<th>Course:</th>
+					<td>{{course.name}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
