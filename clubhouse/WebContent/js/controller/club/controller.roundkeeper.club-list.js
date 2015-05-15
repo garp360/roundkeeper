@@ -1,4 +1,4 @@
-angular.module('controller.module').controller("rkClubListController",['$scope', '$controller', '$http', '$routeParams', '$location', '$log', '$cookieStore', 'rkClub', function($scope, $controller, $http, $routeParams, $location, $log, $cookieStore, rkClub) {
+angular.module('controller.module').controller("rkClubListController",['$scope', '$controller', '$http', '$stateParams', '$location', '$log', '$cookieStore', 'rkClub', function($scope, $controller, $http, $stateParams, $location, $log, $cookieStore, rkClub) {
 	angular.extend(this, $controller('BaseController', {$scope: $scope}));
 	$scope.clubs = [];
 	$scope.initialized = false;

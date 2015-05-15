@@ -3,6 +3,55 @@
 	border-collapse: collapse;
 }
 
+*
+{
+  box-sizing: border-box;
+}
+ 
+.Modal-backdrop
+{
+ position: fixed;
+ top: 0px;
+ left: 0px;
+ height:100%;
+ width:100%;
+ background: #000;
+ z-index: 1;
+ opacity: 0.5;
+}
+ 
+.Modal-holder
+{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+  background: transparent;
+  z-index: 2;
+  padding: 30px 15px;
+}
+
+.Modal-box
+{
+  margin: 0 auto;
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+  position: relative;
+}
+ 
+@media screen and (min-width: 992px)
+{
+  .Modal-box
+  {
+    width: 50%;
+    padding: 30px;
+  }
+}
+
 .hb.roundkeeper.scoring TH,.hb.roundkeeper.scoring TD {
 	border: 1px solid #c0c0c0;
 	padding-left:2px;
@@ -20,4 +69,33 @@
 
 .hb.roundkeeper.scoring TD.pts,.hb.roundkeeper.scoring TD.hcp {
 	text-align: right;
+}
+
+
+
+.hb.roundkeeper.course-detail {
+	table-layout: fixed;
+	border-collapse: collapse;
+	margin-top: 4px;
+}
+
+.hb.roundkeeper.course-detail TH,.hb.roundkeeper.course-detail TD {
+	border: 1px solid #c0c0c0;
+	padding:2px;
+	text-align: center;
+	width: 35px;
+}
+
+.hb.roundkeeper.course-detail TH.title {
+	text-align:left;
+	text-transform: capitalize;
+}
+
+.hb.roundkeeper.course-detail TH.hcp,
+.hb.roundkeeper.course-detail TH.hole,
+.hb.roundkeeper.course-detail TH.yds, {
+	border: 1px solid #c0c0c0;
+	padding:2px;
+	text-align: center;
+	width: 35px;
 }

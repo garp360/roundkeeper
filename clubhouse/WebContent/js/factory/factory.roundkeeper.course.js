@@ -21,13 +21,13 @@ angular.module('factory.module').factory('rkCourse', function( $q, $log, $fireba
 		return deferred.promise;
 	};
 
-	factory.findCourseById = function(id) {
+	factory.findCourseById = function(courseId) {
 		var deferred = $q.defer();
 		
-		$firebaseObject(factory.courseRef.child(id)).$loaded().then(function(courseModel) {
+		$firebaseObject(factory.courseRef.child(courseId)).$loaded().then(function(courseModel) {
 			deferred.resolve(factory.courseConverter.convertCourse(courseModel));
 		}, function(err){
-			deferred.reject("ERROR: Failed on club.findById[club]");
+			deferred.reject("ERROR: Failed on course.findById[courseId]");
 		});
 		
 		return deferred.promise;

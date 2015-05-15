@@ -1,6 +1,6 @@
-angular.module('controller.module').controller("rkUserDetailController",['$scope', '$controller', '$http', '$routeParams', '$location', '$log', '$cookieStore', 'rkUser', function($scope, $controller, $http, $routeParams, $location, $log, $cookieStore, rkUser) {
+angular.module('controller.module').controller("rkUserDetailController",['$scope', '$controller', '$http', '$stateParams', '$location', '$log', '$cookieStore', 'rkUser', function($scope, $controller, $http, $stateParams, $location, $log, $cookieStore, rkUser) {
 	angular.extend(this, $controller('BaseController', {$scope: $scope}));
-	var userId = $routeParams.userId;
+	var userId = $stateParams.userId;
 	$scope.user = {};
 	$scope.initialized = false;
 	$scope.errorMessage = "";

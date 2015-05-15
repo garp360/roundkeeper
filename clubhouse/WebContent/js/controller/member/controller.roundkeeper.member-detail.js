@@ -1,7 +1,7 @@
-angular.module('controller.module').controller("rkMemberDetailController",['$scope', '$controller', '$http', '$routeParams', '$location', '$log', '$cookieStore', 'rkMember', function($scope, $controller, $http, $routeParams, $location, $log, $cookieStore, rkMember) {
+angular.module('controller.module').controller("rkMemberDetailController",['$scope', '$controller', '$http', '$stateParams', '$location', '$log', '$cookieStore', 'rkMember', function($scope, $controller, $http, $stateParams, $location, $log, $cookieStore, rkMember) {
 	angular.extend(this, $controller('BaseController', {$scope: $scope}));
-	var userId = $routeParams.userId;
-	var clubId = $routeParams.clubId;
+	var userId = $stateParams.userId;
+	var clubId = $stateParams.clubId;
 	$scope.member = {};
 	$scope.initialized = false;
 	$scope.errorMessage = "";

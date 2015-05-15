@@ -26,4 +26,12 @@ angular.module('controller.module').controller("BaseController",['$scope', funct
  		var effDate = moment(date);
  		return effDate.format("MM/DD/YYYY");
  	};
+ 	
+ 	$scope.sum = function(arr) {
+ 		var total = 0;
+ 		angular.forEach(arr, function(value) {
+ 			total += value;
+ 		});
+ 		return total;
+ 	};
 }]);

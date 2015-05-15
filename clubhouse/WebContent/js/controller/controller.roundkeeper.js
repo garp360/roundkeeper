@@ -1,4 +1,4 @@
-angular.module('controller.module').controller("RoundKeeperController",['$scope', '$controller', '$http', '$routeParams', '$location', '$log', '$cookieStore', 'RoundKeeper', function($scope, $controller, $http, $routeParams, $location, $log, $cookieStore, RoundKeeper) {
+angular.module('controller.module').controller("RoundKeeperController",['$scope', '$controller', '$http', '$stateParams', '$location', '$log', '$cookieStore', 'RoundKeeper', function($scope, $controller, $http, $stateParams, $location, $log, $cookieStore, RoundKeeper) {
 	angular.extend(this, $controller('BaseController', {$scope: $scope}));
 	$scope.event = {};
 	$scope.controllerName = "HomeController";

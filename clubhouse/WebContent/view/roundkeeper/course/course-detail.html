@@ -17,6 +17,67 @@
 					<td>{{course.name}}</td>
 				</tr>
 			</table>
+			<table class="hb roundkeeper course-detail" ng-repeat="tee in course.tees | orderBy : 'rating'">
+				<thead>
+					<tr>
+						<th colspan="16" class="title">{{tee.name}} {{getSlopeRatingDefinition(tee)}}</th>
+						<th colspan="6"><a href="#/courses/course/{{course.id}}/teebox/{{tee.id}}">EDIT</a></th>
+					</tr>
+				</thead>
+				<thead>
+					<tr>
+						<th></th>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+						<th>6</th>
+						<th>7</th>
+						<th>8</th>
+						<th>9</th>
+						<th>OUT</th>
+						<th>10</th>
+						<th>11</th>
+						<th>12</th>
+						<th>13</th>
+						<th>14</th>
+						<th>15</th>
+						<th>16</th>
+						<th>17</th>
+						<th>18</th>
+						<th>IN</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Yardage</td>
+						<td ng-repeat="yrds in getFrontNine(tee.yardage) track by $index">{{yrds}}</td>
+						<td>{{sum(getFrontNine(tee.yardage))}}</td>
+						<td ng-repeat="yrds in getBackNine(tee.yardage) track by $index">{{yrds}}</td>
+						<td>{{sum(getBackNine(tee.yardage))}}</td>
+						<td>{{sum(getFrontNine(tee.yardage)) + sum(getBackNine(tee.yardage))}}</td>
+					</tr>
+					<tr>
+						<td>Handicap</td>
+						<td ng-repeat="hcp in getFrontNine(tee.hcp) track by $index">{{hcp}}</td>
+						<td></td>
+						<td ng-repeat="hcp in getBackNine(tee.hcp) track by $index">{{hcp}}</td>
+						<td></td>
+						<td>Total</td>
+					</tr>
+					<tr>
+						<td>Par</td>
+						<td ng-repeat="par in getFrontNine(tee.par) track by $index">{{par}}</td>
+						<td>{{sum(getFrontNine(tee.par))}}</td>
+						<td ng-repeat="par in getBackNine(tee.par) track by $index">{{par}}</td>
+						<td>{{sum(getBackNine(tee.par))}}</td>
+						<td>{{sum(getFrontNine(tee.par)) + sum(getBackNine(tee.par))}}</td>
+					</tr>
+				</tbody>
+				
+			</table>
 		</div>
 	</div>
 </body>
