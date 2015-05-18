@@ -35,7 +35,7 @@
 				<tbody>
 					<tr ng-repeat="club in user.clubs | orderBy : 'name'">
 						<td>{{$index + 1}}</td>
-						<td><a href="#/clubs/club/{{club.id}}">{{club.name}}</a></td>
+						<td><a ui-sref="club-detail( { 'clubId': club.id } )">{{club.name}}</a></td>
 					</tr>
 				</tbody>
 			</table>

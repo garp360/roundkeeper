@@ -1,6 +1,6 @@
-angular.module('controller.module').controller("rkClubDetailController",['$scope', '$controller', '$http', '$stateParams', '$location', '$log', '$cookieStore', 'rkClub', function($scope, $controller, $http, $stateParams, $location, $log, $cookieStore, rkClub) {
+angular.module('controller.module').controller("rkClubDetailController",['$scope', '$controller', '$state','$stateParams', '$log', 'rkClub', function($scope, $controller, $state, $stateParams, $log, rkClub) {
 	angular.extend(this, $controller('BaseController', {$scope: $scope}));
-	var clubId = $stateParams.id;
+	var clubId = $stateParams.clubId;
 	$scope.club = {};
 	$scope.initialized = false;
 	$scope.errorMessage = "";
@@ -16,4 +16,8 @@ angular.module('controller.module').controller("rkClubDetailController",['$scope
 		$scope.error = true;
 		$scope.initialized = true;
 	});
+	
+	$scope.edit = function() {
+		$state.go( 'club-edit', { 'clubId': clubId } );
+	};
 }]);

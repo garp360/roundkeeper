@@ -21,7 +21,7 @@
 				<thead>
 					<tr>
 						<th colspan="16" class="title">{{tee.name}} {{getSlopeRatingDefinition(tee)}}</th>
-						<th colspan="6"><a href="#/courses/course/{{course.id}}/teebox/{{tee.id}}">EDIT</a></th>
+						<th colspan="6"><a ui-sref="teebox-detail( { 'courseId': course.id, 'teeboxId': tee.id  } )">EDIT</a></th>
 					</tr>
 				</thead>
 				<thead>

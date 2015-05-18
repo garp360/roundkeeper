@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>RoundKeeper by hb</title>
+</head>
+<body>
+	<div ng-show="!initialized">
+		<div>Loading club data...</div>
+	</div>
+	<div ng-show="initialized">
+		<div ng-show="error">{{errorMessage}}</div>
+		<div>
+			<table class="hb roundkeeper scoring">
+				<tr>
+					<th>Name:</th>
+					<td colspan="3"><input type="text" /></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<th></th>
+					<td><input ng-show="isEdit" type="button" value="Update" /><input ng-show="!isEdit" type="button" value="Create" /></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
