@@ -40,6 +40,16 @@ angular.module('hb.roundkeeper')
     		templateUrl: 'view/roundkeeper/member/member-detail.html',
     		controller: 'rkMemberDetailController'
         })
+        .state('group-list', {
+            url:'/clubs/{clubId}/groups',
+    		templateUrl: 'view/roundkeeper/group/group-list.html',
+    		controller: 'rkGroupListController'
+        })
+        .state('group-detail', {
+        	url:'/clubs/{clubId}/group/{groupId}',
+        	templateUrl: 'view/roundkeeper/group/group-detail.html',
+        	controller: 'rkGroupDetailController'
+        })
         .state('user-detail', {
             url:'/users/{userId}',
     		templateUrl: 'view/roundkeeper/user/user-detail.html',

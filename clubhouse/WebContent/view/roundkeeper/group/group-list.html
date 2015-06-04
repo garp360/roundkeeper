@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>RoundKeeper by hb</title>
+</head>
+<body>
+	<div ng-show="!initialized">
+		<div>Loading club data...</div>
+	</div>
+	<div ng-show="initialized">
+		<div ng-show="error">
+			<div>{{errorMessage}}</div>
+		</div>
+		<div ng-show="!error">
+			<input type="button" value="Create" ng-click="create()" />
+			<table class="hb roundkeeper scoring">
+				<thead>
+					<tr>
+						<th>Club:</th>
+						<th colspan="3">{{club.name}}</th>
+					</tr>
+				</thead>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Contact Person</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="group in club.groups | orderBy : 'name'">
+						<td>{{$index + 1}}</td>
+						<td><a ui-sref="group-detail( { 'clubId' : club.id, 'groupId' : group.id } )">{{group.name}}</a></td>
+						<td>{{group.contact.name}}</td>
+						<td><div ng-repeat="email in group.contact.email | orderBy : 'email'">{{email}}</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
